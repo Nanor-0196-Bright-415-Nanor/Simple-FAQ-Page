@@ -1,0 +1,125 @@
+
+
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+
+     body {
+        background: linear-gradient(hsl(240, 80%, 20%),hsl(180, 80%, 10%),rgba(0,0,0,0.6));
+        color: yellow;
+        font-size: 18px;
+        font-family:Arial, Helvetica, sans-serif;
+       
+     }
+
+     #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 600px;
+        margin: auto;
+     }
+
+
+     #QandAContainer {
+        padding: 20px;
+        box-shadow: inset 6px 6px 6px 0;
+        border: 2px solid yellow;
+        border-radius: 20px;
+        text-align: center;
+       
+        cursor: pointer;
+     }
+
+     .question {
+        font-size: 20px;
+        padding: 20px;
+        color: yellow;
+        font-weight: 600;
+        border-bottom: 5px solid yellow;
+        margin: 14px;
+        position: relative;
+     }
+
+     .answer {
+        display: flex;
+        align-items: center;
+        line-height: 2;
+        justify-content: center;
+        flex-direction: column;
+        height: 0;
+        transition: height 0.5s;
+        overflow: hidden; 
+        color: wheat;
+        
+     }
+
+     .question::after {
+        content: "+";
+        position:absolute;
+            right: 5px;
+            bottom: 10px;
+            font-size: 2rem;
+            color: white;
+        
+     }
+
+   
+    .QandA.active .answer{
+        height: 200px;
+        
+        
+     }
+
+     .QandA.active .question::after {
+        content: "-";
+        position:absolute;
+            right: 5px;
+            bottom: 10px;
+            font-size: 2rem;
+            color: white;
+        
+     } 
+     
+     @media  only screen  and (max-width: 760px){
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+            font-size: 18px;
+          
+        }
+
+        #QandAContainer {
+            padding: 15px;
+            margin: auto;
+            box-shadow: inset 6px 6px 6px 0;
+            border: 2px solid yellow;
+            border-radius: 20px;
+           text-align: left;
+            cursor: pointer;
+            overflow-y: scroll;
+            width: calc(100vh - 80%);
+            height:calc(100vh - 15px); 
+           
+         }
+         .answer {
+            overflow-y: scroll;
+         }
+       
+           
+    .QandA.active .answer{
+        height: 200px;  
+     }
+
+     .QandA{
+        padding: 20px;
+     }
+ 
+     }
